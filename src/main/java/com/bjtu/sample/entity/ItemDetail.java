@@ -31,7 +31,8 @@ public class ItemDetail {
 	
 	private BigDecimal originalTotalPrice;//原价小计
 	
-	private BigDecimal discountedPrice;//美团价格
+	// Deleted, not really used in this context
+//	private BigDecimal discountedPrice;//美团价格
 	
 	@ManyToOne
 	private Item item;
@@ -66,14 +67,6 @@ public class ItemDetail {
 
 	public void setOriginalTotalPrice(BigDecimal originalTotalPrice) {
 		this.originalTotalPrice = originalTotalPrice;
-	}
-
-	public BigDecimal getDiscountedPrice() {
-		return discountedPrice;
-	}
-
-	public void setDiscountedPrice(BigDecimal discountedPrice) {
-		this.discountedPrice = discountedPrice;
 	}
 
 	public Item getItem() {
