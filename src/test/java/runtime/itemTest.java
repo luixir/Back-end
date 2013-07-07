@@ -31,7 +31,7 @@ public class itemTest {
 //	@Test
 	public void AddToTable(){
 		Session ss = sessionFactory.openSession();
-		item.setArea("haidian");
+		item.setArea("chaoyang");
 		item.setCreateDate(new Date());
 		ss.save(item);
 	}
@@ -71,11 +71,11 @@ public class itemTest {
 	@Test
 	public void ReadFromTable(){
 		Session ss = sessionFactory.openSession();
-		Item item = (Item) ss.load(Item.class, 6);
+		Item item = (Item) ss.load(Item.class, 3);
 		
-		System.out.print("*************************" + item.getArea());
+		System.out.print("************************* " + item.getArea());
 		
-		Assert.assertEquals("haidian", item.getArea());
+		Assert.assertEquals("chaoyang", item.getArea());
 	}
 	
 	@Test
@@ -83,15 +83,14 @@ public class itemTest {
 	{
 		List<Item> items = itemService.ListItem();
 		
-		Assert.assertEquals(13, items.size());
+		Assert.assertEquals(3, items.size());
 	}
 	
 	@Test
 	public void testUpdateItem()
 	{
 		itemService.UpdateItem();
-		
 		List<Item> items = itemService.ListItem();
-		Assert.assertEquals("Shanghai", items.get(2).getArea());
+		Assert.assertEquals("bandung", items.get(1).getArea());
 	}
 }

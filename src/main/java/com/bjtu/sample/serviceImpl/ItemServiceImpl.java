@@ -22,15 +22,17 @@ public class ItemServiceImpl implements ItemService{
 	
 	public List<Item> ListItem(){
 		String querySentence = "From Item item";
-
 		
 		return genDao.searchForList(querySentence, new HashMap<String, Object>());
 	}
 	
 	public void UpdateItem(){	
-		Item item = genDao.load(Item.class, 6);
-		item.setArea("Shanghai");
+		Item item = genDao.load(Item.class, 2);
+		item.setArea("Bandung");
 		genDao.update(item);
-		
+	}
+	
+	public void DeleteItem(){
+		// CODE
 	}
 }

@@ -7,5 +7,5 @@ import com.bjtu.sample.entity.Item;
 public interface ItemService {
 	public List<Item> ListItem();
 	public void UpdateItem();
-	
+	public void DeleteItem();
 }
