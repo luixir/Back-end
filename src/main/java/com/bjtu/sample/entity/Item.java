@@ -1,6 +1,7 @@
 package com.bjtu.sample.entity;
 
 //Hibernate library
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -45,7 +46,7 @@ public class Item {
 	
 	private Date createDate;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Address address;//商品所属商家的地址
 	
 	@ManyToOne
