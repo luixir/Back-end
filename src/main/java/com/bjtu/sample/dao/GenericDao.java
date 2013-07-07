@@ -8,11 +8,14 @@ public class GenericDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	/**
+	 * Save to the entity
+	 * @param object
+	 */
 	public void save(Object object)
 	{
 		sessionFactory.getCurrentSession().save(object);
 	}
 	
 	
-
 }

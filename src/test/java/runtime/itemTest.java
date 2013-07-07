@@ -24,7 +24,7 @@ public class itemTest {
 	Item item = new Item();
 
 	@Test
-	public void func(){
+	public void AddToTable(){
 		Session ss = sessionFactory.openSession();
 		item.setArea("haidian");
 		item.setCreateDate(new Date());
@@ -33,8 +33,7 @@ public class itemTest {
 	}
 	
 	@Test
-	public void func1()
-	{
+	public void ReadFromTable(){
 		Session ss = sessionFactory.openSession();
 		Item item = (Item) ss.load(Item.class, 1);
 		
