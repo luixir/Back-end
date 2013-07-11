@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -15,12 +16,12 @@ import java.util.*;
 
 
 @Entity
-@Table(name = "Item" )
+@Table(name = "item" )
 public class Item {
 
 	@Id
 	@GeneratedValue
-	private int id;//商品id
+	private long id;//商品id
 	
 	private String name;//商品名称
 	
@@ -44,9 +45,9 @@ public class Item {
 	
 	private Date endDate;//该团购结束时间
 	
-	private Date createDate;
+	private Date createDate;//团购创建时间
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;//商品所属商家的地址
 	
 	@ManyToOne
@@ -164,12 +165,12 @@ public class Item {
 		this.address = address;
 	}
 
-	public List<ItemDetail>getItemDetail() {
+	public List<ItemDetail>getOrderDetail() {
 		return itemDetails;
 	}
 
-	public void setOrderDetail(List<ItemDetail> itemDetail) {
-		this.itemDetails = itemDetail;
+	public void setOrderDetail(List<ItemDetail> orderDetail) {
+		this.itemDetails = orderDetail;
 	}
 	
 	
@@ -190,11 +191,11 @@ public class Item {
 		this.content = content;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

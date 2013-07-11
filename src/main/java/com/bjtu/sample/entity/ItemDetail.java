@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 
 
 @Entity
-@Table(name = "ItemDetail" )
+@Table(name = "item_detail" )
 public class ItemDetail {
 
 	@Id
@@ -30,9 +30,6 @@ public class ItemDetail {
 	private int number;//数量规格
 	
 	private BigDecimal originalTotalPrice;//原价小计
-	
-	// Deleted, not really used in this context
-//	private BigDecimal discountedPrice;//美团价格
 	
 	@ManyToOne
 	private Item item;
@@ -76,5 +73,7 @@ public class ItemDetail {
 	public void setItem(Item item) {
 		this.item = item;
 	}
+
+	
 
 }

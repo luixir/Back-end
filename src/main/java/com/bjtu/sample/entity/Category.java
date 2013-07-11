@@ -1,6 +1,7 @@
 package com.bjtu.sample.entity;
 
 //Hibernate library
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +14,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "Category" )
+@Table(name = "category" )
 public class Category {
 
 	@Id
@@ -27,7 +28,7 @@ public class Category {
 	@OneToMany(mappedBy = "parent")
 	private List<Category> subCategory;//子分类
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Category parent;// 分类是子分类的父类（例如，food是Chinese Food的父类）
 
 	public String getName() {

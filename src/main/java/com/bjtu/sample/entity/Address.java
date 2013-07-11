@@ -4,12 +4,12 @@ package com.bjtu.sample.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Address" )
+@Table(name = "address" )
 public class Address {
 
 	@Id
@@ -22,7 +22,10 @@ public class Address {
 	
 	private String phone;// 商家联系电话（预约或者咨询等）
 	
-	private String methodToThere;// 交通方式,地铁，公交等
+	private String methodToThere;// 交通方式,地铁，公交等s
+
+	@ManyToOne
+	private Item item;
 
 	public String getName() {
 		return name;
@@ -54,6 +57,14 @@ public class Address {
 	
 	public void setMethodToThere(String methodToThere) {
 		this.methodToThere = methodToThere;
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
 }
