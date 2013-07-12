@@ -1,23 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="en">
   <head>
     <meta charset = "utf-8">
-  	<title>分类修改</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta name="description" content>
-  	<meta name="author" content> 
+    <title>分类修改</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content>
+    <meta name="author" content> 
     
-  	<link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="${ctx}/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css">
+    <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="${ctx}/css/bootstrap.min.css">
   </head>
   <body>
 
-  	<div class="navbarTop" ></div>
-  	<div class="container" style="width:1000px">
-  		<div class="menu">
+    <div class="navbarTop" ></div>
+    <div class="container" style="width:1000px">
+      <div class="menu">
+        
           <div id="navbar-example" class="navbar navbar-static">
             <div class="navbar-inner">
               <div class="containerA" style="width: auto;">
@@ -49,15 +53,15 @@
               </div>
             </div>
           </div>                   
-  			
-  		</div>
-  		<div class="mainfield">
-  			<ul class="breadcrumbb">
+        
+      </div>
+      <div class="mainfield">
+        <ul class="breadcrumbb">
           <li><a href="HomePage.html">首页</a> <span class="divider">/</span></li>
           <li><a href="CategoryModify.html">分类管理</a> <span class="divider">/</span></li>
           <li class="active">全部分类</li>
         </ul>
-  			<div class="field">
+        <div class="field">
           <div class="tablefield">
           <table class="table table-striped">
             <thead>
@@ -71,37 +75,24 @@
             </thead>
             <tbody>
               <tr>
-                <td>0001</td>
-                <td>中餐</td>
-                <td>美食</td>
-                <td>修改</td> 
-                <td>删除</td>
+                <c:forEach var="category" items="${categories}">
+                   <<a href="${ctx}/jsp/category-list/${category.id}" ></a>
+                   <a href="${ctx}/jsp/category-list/${category.name}"></a>
+                   <a href="${ctx}/jsp/category-list/${category.parent.name}"></a>
+              </c:forEach>
               </tr>
-              <tr>
-                <td>0002</td>
-                <td>海鲜</td>
-                <td>美食</td>
-                <td>修改</td> 
-                <td>删除</td>
-              </tr>
-              <tr>
-                <td>0003</td>
-                <td>电影</td>
-                <td>无</td>
-                <td>修改</td> 
-                <td>删除</td>
-              </tr>
+              
             </tbody>
           </table>
           </div>
         </div>
-  		</div>
-  	</div>
-  	
-  	<footer></footer>
+      </div>
+    </div>
+    
+    <footer></footer>
     <script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
-  	<script type="text/javascript" src="${ctx}/static/js/bootstrap.js"></script>
-  	<script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 
     <script>
       $('.dropdown-toggle').dropdown();
