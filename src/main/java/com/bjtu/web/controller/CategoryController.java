@@ -11,7 +11,7 @@ import com.bjtu.entity.Category;
 import com.bjtu.service.CategoryService;
 
 @Controller
-@RequestMapping("/abc") //namespace
+@RequestMapping("/category") //namespace
 public class CategoryController {
 	
 	@Autowired
@@ -22,7 +22,7 @@ public class CategoryController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("") //action
+	@RequestMapping("categories") //action
 	public ModelAndView list() {
 		List<Category> categories = categoryService.listAllCategories();
 		ModelAndView modelAndView = new ModelAndView("category-list");
@@ -30,4 +30,5 @@ public class CategoryController {
 		
 		return modelAndView;
 	}
+	
 }
