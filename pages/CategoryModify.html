@@ -75,26 +75,13 @@
             </thead>
             <tbody>
               <tr>
-                <td>0001</td>
-                <td>中餐</td>
-                <td>美食</td>
-                <td>修改</td> 
-                <td>删除</td>
+                <c:forEach var="category" items="${categories}">
+                   <<a href="${ctx}/jsp/category-list/${category.id}" ></a>
+                   <a href="${ctx}/jsp/category-list/${category.name}"></a>
+                   <a href="${ctx}/jsp/category-list/${category.parent.name}"></a>
+              </c:forEach>
               </tr>
-              <tr>
-                <td>0002</td>
-                <td>海鲜</td>
-                <td>美食</td>
-                <td>修改</td> 
-                <td>删除</td>
-              </tr>
-              <tr>
-                <td>0003</td>
-                <td>电影</td>
-                <td>无</td>
-                <td>修改</td> 
-                <td>删除</td>
-              </tr>
+              
             </tbody>
           </table>
           </div>
