@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="en">
   <head>
     <meta charset = "utf-8">
   	<title>分类修改</title>
@@ -10,14 +12,15 @@
   	<meta name="description" content>
   	<meta name="author" content> 
     
-  	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/static/css/bootstrap.min.css">
   </head>
   <body>
 
   	<div class="navbarTop" ></div>
   	<div class="container" style="width:1000px">
   		<div class="menu">
+  			
           <div id="navbar-example" class="navbar navbar-static">
             <div class="navbar-inner">
               <div class="containerA" style="width: auto;">
@@ -70,27 +73,15 @@
               </tr>
             </thead>
             <tbody>
+              <c:forEach var="category" items="${categories}">
               <tr>
-                <td>0001</td>
-                <td>中餐</td>
-                <td>美食</td>
-                <td>修改</td> 
-                <td>删除</td>
+                   <td>${category.id}</td>
+                   <td>${category.name}</td>
+                   <td>${category.parent.name}</td>
+                   <td><a href=#>修改</a></td>
+                   <td><a href=#>删除</a></td>
               </tr>
-              <tr>
-                <td>0002</td>
-                <td>海鲜</td>
-                <td>美食</td>
-                <td>修改</td> 
-                <td>删除</td>
-              </tr>
-              <tr>
-                <td>0003</td>
-                <td>电影</td>
-                <td>无</td>
-                <td>修改</td> 
-                <td>删除</td>
-              </tr>
+              </c:forEach>
             </tbody>
           </table>
           </div>
@@ -99,9 +90,9 @@
   	</div>
   	
   	<footer></footer>
-    <script type="text/javascript" src="js/jquery.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
+  	<script type="text/javascript" src="${ctx}/static/js/bootstrap.js"></script>
+  	<script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 
     <script>
       $('.dropdown-toggle').dropdown();
