@@ -7,10 +7,10 @@
 <html lang="en">
   <head>
     <meta charset = "utf-8">
-  	<title>分类修改</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<meta name="description" content>
-  	<meta name="author" content> 
+    <title>分类修改</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content>
+    <meta name="author" content> 
     
   	<link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css">
     <link rel="stylesheet" type="text/css" href="${ctx}/static/css/bootstrap.min.css">
@@ -20,7 +20,6 @@
   	<div class="navbarTop" ></div>
   	<div class="container" style="width:1000px">
   		<div class="menu">
-  			
           <div id="navbar-example" class="navbar navbar-static">
             <div class="navbar-inner">
               <div class="containerA" style="width: auto;">
@@ -52,15 +51,15 @@
               </div>
             </div>
           </div>                   
-  			
-  		</div>
-  		<div class="mainfield">
-  			<ul class="breadcrumbb">
+        
+      </div>
+      <div class="mainfield">
+        <ul class="breadcrumbb">
           <li><a href="HomePage.html">首页</a> <span class="divider">/</span></li>
           <li><a href="CategoryModify.html">分类管理</a> <span class="divider">/</span></li>
           <li class="active">全部分类</li>
         </ul>
-  			<div class="field">
+        <div class="field">
           <div class="tablefield">
           <table class="table table-striped">
             <thead>
@@ -93,7 +92,6 @@
     <script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
   	<script type="text/javascript" src="${ctx}/static/js/bootstrap.js"></script>
   	<script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
-
     <script>
       $('.dropdown-toggle').dropdown();
     </script>
