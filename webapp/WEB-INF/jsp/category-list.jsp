@@ -10,8 +10,8 @@
   	<meta name="description" content>
   	<meta name="author" content> 
     
-  	<link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="${ctx}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/static/css/bootstrap.min.css">
   </head>
   <body>
 
@@ -99,9 +99,9 @@
   	</div>
   	
   	<footer></footer>
-    <script type="text/javascript" src="js/jquery.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
+  	<script type="text/javascript" src="${ctx}/static/js/bootstrap.js"></script>
+  	<script type="text/javascript" src="${ctx}/static/js/bootstrap.min.js"></script>
 
     <script>
       $('.dropdown-toggle').dropdown();
