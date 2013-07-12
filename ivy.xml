@@ -7,6 +7,8 @@
    "License"); you may not use this file except in compliance
    with the License.  You may obtain a copy of the License at
 
+
+
      http://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing,
@@ -39,14 +41,23 @@
 		<dependency org="org.springframework" name="spring-asm" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
 		<dependency org="org.springframework" name="spring-aop" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
 		<dependency org="org.springframework" name="spring-jdbc" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
-		<dependency org="org.springframework" name="spring-orm" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
+		<dependency org="org.springframework" name="spring-orm" rev="3.1.2.RELEASE" conf="compile->default"/>
 		<dependency org="org.springframework" name="spring-tx" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
 		<dependency org="org.springframework" name="spring-web" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
+		<dependency org="org.springframework" name="spring-webmvc" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
     
 		<dependency org="org.hibernate" name="hibernate-core" rev="4.1.7.Final" conf="compile->default,sources"/>
         <dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.1.7.Final" conf="compile->default,sources"/>
 
 		<dependency org="org.springframework" name="spring-test" rev="3.1.2.RELEASE" conf="compile->default,sources"/>
+		
+		<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="compile->default,sources"/>
+		<dependency org="commons-beanutils" name="commons-beanutils" rev="1.8.3" conf="compile->default,sources"/>
+		<dependency org="commons-codec" name="commons-codec" rev="1.5" conf="compile->default,sources"/>
+		<dependency org="commons-collections" name="commons-collections" rev="3.2.1" conf="compile->default,sources"/>
+		<dependency org="commons-logging" name="commons-logging" rev="1.1.1" conf="compile->default,sources"/>
+		<dependency org="commons-fileupload" name="commons-fileupload" rev="1.2.2" conf="compile->default,sources"/>
+		<dependency org="commons-io" name="commons-io" rev="2.0.1" conf="compile->default,sources"/>
 		
 		<dependency org="javassist" name="javassist" rev="3.12.1.GA" conf="compile->default,sources"/>
 		<dependency org="aopalliance" name="aopalliance" rev="1.0" conf="compile->default,sources"/>
@@ -66,6 +77,9 @@
 		<dependency org="org.mortbay.jetty" name="jetty" rev="6.1.26" conf="provided->default"/>
 		<dependency org="org.mortbay.jetty" name="jsp-2.1-jetty" rev="6.1.26" conf="provided->default"/>
 		<dependency org="javax.servlet" name="servlet-api" rev="2.5" conf="compile->default,sources"/>
+		<dependency org="com" name="weibo" rev="1.0">
+  			<artifact name="weibo" type="jar" url="http://202.112.154.56/jar/weibo.jar"/>
+		</dependency>
 		
     </dependencies>
     

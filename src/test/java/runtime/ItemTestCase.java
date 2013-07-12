@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.bjtu.sample.entity.Item;
+import com.bjtu.entity.Item;
 
 /**
  * @author Downpour

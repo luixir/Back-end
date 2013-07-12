@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bjtu.sample.dao;
+package com.bjtu.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,7 +26,6 @@ public class GenericDaoSupport {
 	 * @param sessionFactory
 	 *            the sessionFactory to set
 	 */
-	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}

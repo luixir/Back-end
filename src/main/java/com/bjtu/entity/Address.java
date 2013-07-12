@@ -1,10 +1,9 @@
-package com.bjtu.sample.entity;
+package com.bjtu.entity;
 
 //Hibernate library
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -16,55 +15,84 @@ public class Address {
 	@GeneratedValue
 	private long id;
 	
-	private String name;//ÉÌ¼ÒÃû³Æ
+	private String name;//å•†å®¶åç§°
 	
-	private String addressDetail;// ÉÌ¼ÒÏêÏ¸µØÖ·
+	private String addressDetail;// å•†å®¶è¯¦ç»†åœ°å€
 	
-	private String phone;// ÉÌ¼ÒÁªÏµµç»°£¨Ô¤Ô¼»òÕß×ÉÑ¯µÈ£©
+	private String phone;// å•†å®¶è”ç³»ç”µè¯ï¼ˆé¢„çº¦æˆ–è€…å’¨è¯¢ç­‰ï¼‰
 	
-	private String methodToThere;// ½»Í¨·½Ê½,µØÌú£¬¹«½»µÈs
+	private String methodToThere;// äº¤é€šæ–¹å¼,åœ°é“ï¼Œå…¬äº¤ç­‰	
 
-	@ManyToOne
-	private Item item;
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
 
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return the addressDetail
+	 */
 	public String getAddressDetail() {
 		return addressDetail;
 	}
 
+	/**
+	 * @param addressDetail the addressDetail to set
+	 */
 	public void setAddressDetail(String addressDetail) {
 		this.addressDetail = addressDetail;
 	}
 
+	/**
+	 * @return the phone
+	 */
 	public String getPhone() {
 		return phone;
 	}
 
+	/**
+	 * @param phone the phone to set
+	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
+	/**
+	 * @return the methodToThere
+	 */
 	public String getMethodToThere() {
 		return methodToThere;
 	}
-	
+
+	/**
+	 * @param methodToThere the methodToThere to set
+	 */
 	public void setMethodToThere(String methodToThere) {
 		this.methodToThere = methodToThere;
 	}
 
-	public Item getItem() {
-		return item;
-	}
 
-	public void setItem(Item item) {
-		this.item = item;
-	}
 
 }

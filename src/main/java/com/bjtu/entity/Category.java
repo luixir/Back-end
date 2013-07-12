@@ -1,4 +1,4 @@
-package com.bjtu.sample.entity;
+package com.bjtu.entity;
 
 //Hibernate library
 import javax.persistence.CascadeType;
@@ -21,44 +21,82 @@ public class Category {
 	@GeneratedValue
 	private long id;
 	
-	private String name;//·ÖÀàÃû³Æ
+	private String name;//åˆ†ç±»åç§°
 	
-	private String picture;//·ÖÀàÍ¼Æ¬
+	private String picture;//åˆ†ç±»å›¾ç‰‡
 	
 	@OneToMany(mappedBy = "parent")
-	private List<Category> subCategory;//×Ó·ÖÀà
+	private List<Category> subCategory;//å­åˆ†ç±»
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Category parent;// ·ÖÀàÊÇ×Ó·ÖÀàµÄ¸¸Àà£¨ÀıÈç£¬foodÊÇChinese FoodµÄ¸¸Àà£©
+	private Category parent;// åˆ†ç±»æ˜¯å­åˆ†ç±»çš„çˆ¶ç±»ï¼ˆä¾‹å¦‚ï¼Œfoodæ˜¯Chinese Foodçš„çˆ¶ç±»ï¼‰
 
+	/**
+	 * @return the id
+	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the name
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return the picture
+	 */
 	public String getPicture() {
 		return picture;
 	}
 
+	/**
+	 * @param picture the picture to set
+	 */
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 
+	/**
+	 * @return the subCategory
+	 */
 	public List<Category> getSubCategory() {
 		return subCategory;
 	}
 
+	/**
+	 * @param subCategory the subCategory to set
+	 */
 	public void setSubCategory(List<Category> subCategory) {
 		this.subCategory = subCategory;
 	}
 
+	/**
+	 * @return the parent
+	 */
 	public Category getParent() {
 		return parent;
 	}
 
+	/**
+	 * @param parent the parent to set
+	 */
 	public void setParent(Category parent) {
 		this.parent = parent;
 	}
