@@ -9,6 +9,7 @@
   	<link rel="stylesheet" type="text/css" href="css/style.css">
   	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css">
   </head>
   <body>
 
@@ -153,19 +154,26 @@
             </div>
           </div>
 
+
+
+
           <div class="control-group">
             <label class="control-label" for="inputStartTime">开始时间：</label>
-            <div class="controls">
-              <input type="text" id="inputStartTime" placeholder="Start time">
-              <abbr title="2013.1.24">eg</abbr>
+            <div class="input-append date datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" style="margin-left:16px;">
+             <input size="16" type="text" value="12-02-2012" readonly>
+             
+             <span class="add-on"><i class="icon-th"></i></span>
+             <input type="hidden" id="dtp_input1" value="" />
             </div>
           </div>
 
           <div class="control-group">
             <label class="control-label" for="inputEndTime">结束时间：</label>
-            <div class="controls">
-              <input type="text" id="inputEndTime" placeholder="End time">
-              <abbr title="2013.7.24">eg</abbr>
+            <div class="input-append date datepicker" data-date="12-02-2012" data-date-format="dd-mm-yyyy" style="margin-left:16px;">
+             <input size="16" type="text" value="12-02-2012" readonly>
+             
+             <span class="add-on"><i class="icon-th"></i></span>
+             <input type="hidden" id="dtp_input1" value="" />
             </div>
           </div>
 
@@ -357,10 +365,23 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 
     <script>
       $('.dropdown-toggle').dropdown();
     </script>
+
+
+
+
+    <script type="text/javascript">
+    $('.datepicker').datepicker({
+      autoclose:true,
+      todayBtn:true
+    });
+    </script>
+
+
 
 
   </body>
