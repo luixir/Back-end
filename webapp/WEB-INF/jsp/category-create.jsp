@@ -42,7 +42,7 @@
 								</ul></li>
 							<li class="dropdown"><a id="dLabel2" role="button"
 								class="dropdown-toggle" data-toggle="dropdown" data-target="#"
-								href="">分类管理<b class="caret"></b></a>
+								href="#">分类管理<b class="caret"></b></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel2">
 									<li role="presentaition"><a role="menuitem" tabindex="-1"
 										href="${ctx}/categories/create">新增分类</a></li>
