@@ -20,7 +20,6 @@ public class CategoryServiceImpl implements CategoryService {
 
 	public List<Category> listAllCategories() {
 		String querySentence = "FROM Category category";
-				
 		return genericDaoSupport.searchForList(querySentence, new HashMap<String, Object>());
 	}
 
@@ -40,6 +39,11 @@ public class CategoryServiceImpl implements CategoryService {
 		String query = "FROM Category category WHERE category.parent is null";
 		
 		return genericDaoSupport.searchForList(query, new HashMap<String, Object>());
+	}
+
+	public void deleteCategory(Category category) {
+		genericDaoSupport.delete(category);
+		
 	}
 	
 }

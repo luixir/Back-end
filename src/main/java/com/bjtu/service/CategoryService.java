@@ -13,6 +13,8 @@ public interface CategoryService {
 	public Category getCategoryByName(String name);
 	
 	public List<Category> listParentCategories();
+	
+	public void deleteCategory(Category category);
 
 
 }
