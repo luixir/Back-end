@@ -115,19 +115,9 @@
 									<div class="control-group">
 										<label class="control-label" for="inputArea">商品区域：</label>
 										<div class="controls">
-											<label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios1" value="option1"
-												checked> 海淀区
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios2" value="option2"
-												checked> 朝阳区
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios3" value="option3"
-												checked> 东城区
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios4" value="option4"
-												checked> 西城区
-											</label>
+											<input type="text" id="inputarea"
+												placeholder="area" name="area">
+											
 										</div>
 									</div>
 
@@ -194,30 +184,13 @@
 									<div class="control-group">
 										<label class="control-label" for="inputCategory">分类：</label>
 										<div class="controls">
-											<label class="radio inline"> <c:forEach
+											<label class="radio inline"> 
+												<c:forEach
 													var="rootItems" items="${rootItems}">
 													<input type="radio" name="optionsRadios"
 														id="optionsRadios11" value="option11" checked>${rootItems.category}/
-              </c:forEach>
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios11" value="option11"
-												checked> KTV
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios12" value="option12"
-												checked> 电影
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios13" value="option13"
-												checked> 酒店
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios14" value="option14"
-												checked> 中餐
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios15" value="option15"
-												checked> 西餐
-											</label> <label class="radio inline"> <input type="radio"
-												name="optionsRadios" id="optionsRadios16" value="option16"
-												checked> 海鲜
-											</label>
+                                                </c:forEach>
+											</label> 
 										</div>
 									</div>
 
