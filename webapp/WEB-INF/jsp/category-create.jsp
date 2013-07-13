@@ -68,7 +68,8 @@
 					<fieldset>
 						<label>分类名称:</label> <input type="text"
 							placeholder="category name" name="name"> <span
-							class="help-block">Example 中餐</span> <label>分类图片:</label> <input
+							class="help-block">Example 中餐</span> 
+						<label>分类图片:</label> <input
 							type="text" placeholder="category picture" name="picture">
 						<button type="button" class="btn">浏览</button>
 						<br></br> <label>父类别:</label> <select>
@@ -77,13 +78,11 @@
 							</c:forEach>
 						</select>
 					</fieldset>
-
 					<div class="confrimBtn">
 						<p>
 							<button class="btn " type="submit" style="color: black">
 								<b>确认</b>
 							</button>
-
 						</p>
 					</div>
 				</form>

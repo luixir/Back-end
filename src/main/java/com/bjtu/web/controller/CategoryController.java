@@ -39,7 +39,6 @@ public class CategoryController {
 	 */
 	@RequestMapping("/create")
 	public ModelAndView create() {
-		
 		List<Category> rootCategories = categoryService.listParentCategories();
 		ModelAndView modelAndView = new ModelAndView("category-create");
 		modelAndView.addObject("rootCategories", rootCategories);
@@ -53,12 +52,24 @@ public class CategoryController {
 	 * @param category
 	 * @return
 	 */
-	@RequestMapping( value = "/create", method = RequestMethod.POST)
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ModelAndView onCreate(Category category) {
 		categoryService.addCategory(category);
 		
 		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
 		
+		return modelAndView;
+	}
+	
+	/**
+	 *  
+	 * @param category
+	 * @return
+	 */
+	@RequestMapping("/delete")
+	public ModelAndView onDelete(Category category){
+		categoryService.deleteCategory(category);
+		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
 		return modelAndView;
 	}
 }

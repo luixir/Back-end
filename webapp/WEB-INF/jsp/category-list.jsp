@@ -86,8 +86,8 @@
 	    									</c:otherwise>
 										</c:choose>
 									</td>
-									<td><a href=#>修改</a></td>
-									<td><a href=#>删除</a></td>
+									<td><a href="${ctx}/categories/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+									<td><a href="${ctx}/categories/delete?id=${category.id}" onclick="return confirm('Delete <${category.name}> category?')">删除</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
