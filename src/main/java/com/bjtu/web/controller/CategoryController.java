@@ -17,7 +17,7 @@ public class CategoryController {
 	
 	@Autowired
 	private CategoryService categoryService;
-
+	
 	/**
 	 * List all the categories
 	 * 
@@ -72,4 +72,5 @@ public class CategoryController {
 		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
 		return modelAndView;
 	}
+	
 }

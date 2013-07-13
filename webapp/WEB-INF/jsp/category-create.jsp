@@ -42,12 +42,12 @@
 								</ul></li>
 							<li class="dropdown"><a id="dLabel2" role="button"
 								class="dropdown-toggle" data-toggle="dropdown" data-target="#"
-								href="">分类管理<b class="caret"></b></a>
+								href="#">分类管理<b class="caret"></b></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel2">
 									<li role="presentaition"><a role="menuitem" tabindex="-1"
-										href="CategoryInput.html">新增分类</a></li>
+										href="${ctx}/categories/create">新增分类</a></li>
 									<li role="presentaition"><a role="menuitem" tabindex="-1"
-										href="CategoryModify.html">全部分类</a></li>
+										href="${ctx}/categories">全部分类</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -58,7 +58,7 @@
 
 			<ul class="breadcrumbb">
 				<li><a href="HomePage.html">首页</a> <span class="divider">/</span></li>
-				<li><a href="CategoryModify.html">分类管理</a> <span
+				<li><a href="${ctx}/categories">分类管理</a> <span
 					class="divider">/</span></li>
 				<li class="active"><a href="${ctx}/categories/create">新增分类</a></li>
 			</ul>
