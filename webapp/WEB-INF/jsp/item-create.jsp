@@ -73,8 +73,7 @@
 						
 							<div class="detailInformation">
 
-								<form class="form-horizontal" method="post"
-									action="${ctx}/items/create">
+								<form class="form-horizontal" method="post" action="${ctx}/items/create">
 									<div class="control-group">
 										<label class="control-label" for="inputName">团购名称：</label>
 										<div class="controls">
@@ -184,13 +183,13 @@
 									<div class="control-group">
 										<label class="control-label" for="inputCategory">分类：</label>
 										<div class="controls">
-											<label class="radio inline"> 
-												<c:forEach
-													var="rootItems" items="${rootItems}">
-													<input type="radio" name="optionsRadios"
-														id="optionsRadios11" value="option11" checked>${rootItems.category}/
+											
+												<c:forEach var="listcategory" items="${listcategory}">
+												<label class="radio inline"> 
+													${listcategory.name}
+                                                </label> 
                                                 </c:forEach>
-											</label> 
+											
 										</div>
 									</div>
 
@@ -209,20 +208,10 @@
 										</div>
 									</div>
 									
-								</form>
+								
 							
 							<!--Sidebar content-->
 
-
-
-
-
-						
-
-
-							
-
-								<form class="form-horizontal">
 
 									<label><b>地址：</b></label>
 									<div class="control-group">

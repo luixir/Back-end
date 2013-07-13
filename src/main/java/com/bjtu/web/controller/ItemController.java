@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bjtu.entity.Category;
 import com.bjtu.entity.Item;
+import com.bjtu.service.CategoryService;
 import com.bjtu.service.ItemService;
 
 @Controller
@@ -19,6 +21,7 @@ public class ItemController {
 	@Autowired
 	
 	private ItemService itemService;
+	private CategoryService categoryService;
 	
 	/**
 	 * List all the items
@@ -40,10 +43,11 @@ public class ItemController {
 	 * @return
 	 */
 	@RequestMapping("/create") // action
-	public ModelAndView Create() {
-		List<Item> rootItems = itemService.listEndingItems();
-		ModelAndView modelAndView = new ModelAndView("Item-create");
-		modelAndView.addObject("rootItems", rootItems);
+	public ModelAndView create() {
+		List<Category> listcategory = categoryService.listAllCategories();
+				
+		ModelAndView modelAndView = new ModelAndView("item-create");
+		modelAndView.addObject("listcategory", listcategory);
 		
 		return modelAndView;
 	}

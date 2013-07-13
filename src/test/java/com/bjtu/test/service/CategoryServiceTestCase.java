@@ -51,7 +51,7 @@ public class CategoryServiceTestCase {
 	@Test
 	public void testListAllCategories(){
 		List<Category> category = categoryService.listAllCategories();
-		Assert.assertEquals(6, category.size());
+		Assert.assertEquals(2, category.size());
 	}
 
 }
