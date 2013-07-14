@@ -178,8 +178,8 @@
 									<div class="control-group">
 										<label class="control-label" for="inputContent">分类：</label>
 												<c:forEach var="listcategory" items="${listcategory}" varStatus="theCount">
-                                                <label class="radio"> 
-                                                <input type="radio" name="optionsRadios" id="optionsRadios${theCount.count}" value="${listcategory.name}">
+                                                <label class="radio">
+                                                <input type="radio" name="category.id" id="${listcategory.id}" value="${listcategory.id}">
                                                 ${listcategory.name}
                                                 </label>
                                                 </c:forEach>

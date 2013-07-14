@@ -71,9 +71,9 @@
 							class="help-block">Example 中餐</span> <label>分类图片:</label> <input
 							type="text" placeholder="category picture" name="picture">
 						<button type="button" class="btn">浏览</button>
-						<br></br> <label>父类别:</label> <select>
+						<br></br> <label>父类别:</label> <select name="parent_id">
 							<c:forEach var="rootcategory" items="${rootCategories}">
-								<option>${rootcategory.name}</option>
+								<option value="${rootcategory.id}">${rootcategory.name}</option>
 							</c:forEach>
 						</select>
 					</fieldset>
