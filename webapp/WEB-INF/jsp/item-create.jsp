@@ -176,18 +176,15 @@
 									</div>
 
 									<div class="control-group">
-										<label class="control-label" for="inputCategory">分类：</label>
-										<div class="controls">
-											
-												<c:forEach var="listcategory" items="${listcategory}">
-												<label class="radio inline"> 
-													${listcategory.name}
-                                                </label> 
+										<label class="control-label" for="inputContent">分类：</label>
+												<c:forEach var="listcategory" items="${listcategory}" varStatus="theCount">
+                                                <label class="radio"> 
+                                                <input type="radio" name="optionsRadios" id="optionsRadios${theCount.count}" value="${listcategory.name}">
+                                                ${listcategory.name}
+                                                </label>
                                                 </c:forEach>
-											
 										</div>
 									</div>
-
 
 									<div class="control-group">
 										<label class="control-label" for="inputFeature">其他特点：</label>

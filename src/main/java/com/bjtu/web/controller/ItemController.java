@@ -43,7 +43,7 @@ public class ItemController {
 	 */
 	@RequestMapping("/create") // action
 	public ModelAndView create() {
-		List<Category> listcategory = categoryService.listParentCategories();
+		List<Category> listcategory = categoryService.listAllCategories();
 				
 		ModelAndView modelAndView = new ModelAndView("item-create");
 		modelAndView.addObject("listcategory", listcategory);
