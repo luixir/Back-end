@@ -39,12 +39,12 @@
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" lazy-init="false">
 		<property name="dataSource" ref="dataSource" />
 		<property name="namingStrategy">
-			<bean class="com.bjtu.persistence.SmartNamingStrategy" />
+			<bean class="com.bjtu.hulumei.persistence.SmartNamingStrategy" />
 		</property>
 		<property name="packagesToScan" value="com/bjtu/" />
 	</bean>
 	
-    <!-- Definition of TransactionManager -->
+   <!-- Definition of TransactionManager -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager" autowire="byName"/>
 
 	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">

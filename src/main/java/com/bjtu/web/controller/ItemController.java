@@ -58,7 +58,6 @@ public class ItemController {
 	}
 	
 	
-	
 	/**
 	 * Create an item
 	 * 
@@ -73,8 +72,16 @@ public class ItemController {
 		return modelAndView;
 	}
 	
-	
-	
-
+	/**
+	 *  
+	 * @param item
+	 * @return
+	 */
+	@RequestMapping("/delete")
+	public ModelAndView onDelete(Item item){
+		itemService.deleteItem(item);
+		ModelAndView modelAndView = new ModelAndView("redirect:/items");
+		return modelAndView;
+	}
 
 }
