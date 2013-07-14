@@ -30,6 +30,10 @@ public class CategoryServiceImpl implements CategoryService {
 	public Category loadCategory(Long id) {
 		return genericDaoSupport.load(Category.class, id);
 	}
+	
+	public Category getCategoryById(Long id){
+		return genericDaoSupport.get(Category.class, id);
+	}
 
 	public Category getCategoryByName(String name) {
 		String query = "From Category category WHERE category.name=:myName";

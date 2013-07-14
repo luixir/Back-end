@@ -67,6 +67,27 @@ public class CategoryController {
 	}
 	
 	/**
+	 * 
+	 * @param category modify
+	 * @return
+	 */
+	@RequestMapping("/category-modify")
+	public ModelAndView modify(Category category){
+		
+		if(category.getParent().getId()!= null){
+			Category rootCategory = categoryService.getCategoryById(category.getParent().getId());
+			category.getClass();
+			
+		}
+		
+		categoryService.getCategoryById(null);
+		
+		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
+		
+		return modelAndView;
+	}
+	
+	/**
 	 *  
 	 * @param category
 	 * @return

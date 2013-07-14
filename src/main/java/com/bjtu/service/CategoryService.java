@@ -18,4 +18,6 @@ public interface CategoryService {
 	
 	public void deleteCategory(Category category);
 
+	public Category getCategoryById(Long id);
+
 }
