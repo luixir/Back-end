@@ -44,10 +44,11 @@ public class ItemController {
 	 */
 	@RequestMapping("/create") // action
 	public ModelAndView create() {
-		List<Category> listcategory = categoryService.listAllCategories();
+//		List<Category> listcategory = categoryService.listParentCategories();
+		List<Item> listitem = itemService.listEndingItems();
 				
 		ModelAndView modelAndView = new ModelAndView("item-create");
-		modelAndView.addObject("listcategory", listcategory);
+		modelAndView.addObject("listcategory", listitem);
 		
 		return modelAndView;
 	}

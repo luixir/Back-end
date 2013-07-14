@@ -80,8 +80,6 @@
 											<input type="text" id="inputName" placeholder="Name"
 												name="name"> <abbr title="巴黎贝甜">eg</abbr>
 										</div>
-
-
 									</div>
 
 									<div class="control-group">
@@ -145,9 +143,6 @@
 										</div>
 									</div>
 
-
-
-
 									<div class="control-group">
 										<label class="control-label" for="inputStartTime">开始时间：</label>
 										<div class="input-append date datepicker"
@@ -207,11 +202,8 @@
 											</label>
 										</div>
 									</div>
-									
-								
 							
 							<!--Sidebar content-->
-
 
 									<label><b>地址：</b></label>
 									<div class="control-group">
@@ -228,7 +220,6 @@
 											<input type="text" id="inputDetailAddress"
 												placeholder="detail address" name="address.addressDetail">
 											<abbr title="朝阳区建国门外大街1号国贸商城B1楼SB124A">eg</abbr>
-
 										</div>
 									</div>
 
@@ -248,8 +239,6 @@
 											<abbr title="地铁大望路站">eg</abbr>
 										</div>
 									</div>
-
-								
 
 									<label><b>本单详情：</b></label>
 									<div class="control-group">
@@ -285,22 +274,19 @@
 									</div>
 
 									<p>
-										<button class="btn " type="button" style="color: black">
+										<button class="btn " type="submit" style="color: black">
 											<b>继续添加</b>
 										</button>
 									</p>
 									
 									<div class="confrimBtn">
 										<p>
-											<button class="btn " type="button" style="color: black">
+											<button class="btn " type="submit" style="color: black">
 												<b>确认</b>
 											</button>
 										</p>
 									</div>
-									
-									
 								</form>
-
 							</div>
 							<!--Body content-->
 						</div>
@@ -323,10 +309,6 @@
 	<script>
 		$('.dropdown-toggle').dropdown();
 	</script>
-
-
-
-
 	<script type="text/javascript">
 		$('.datepicker').datepicker({
 			autoclose : true,
