@@ -30,7 +30,7 @@ public class ItemController {
 	 */
 	@RequestMapping("") //action
 	public ModelAndView list() {
-		List<Item> items = itemService.listEndingItems();
+		List<Item> items = itemService.listAllItem();
 		ModelAndView modelAndView = new ModelAndView("item-list");
 		modelAndView.addObject("items", items);
 		

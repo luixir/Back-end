@@ -78,11 +78,151 @@
               <li><a href="#tab5" data-toggle="tab">酒店</a></li>
             </ul>  
             <div class="tab-content">    
-              <div class="tab-pane active" id="tab1"><p>I'm in Section 1.</p></div>    
-              <div class="tab-pane" id="tab2"><p>Howdy, I'm in Section 2.</p></div> 
-              <div class="tab-pane" id="tab3"><p>Howdy, I'm in Section 3.</p></div>
-              <div class="tab-pane" id="tab4"><p>Howdy, I'm in Section 4.</p></div>
-              <div class="tab-pane" id="tab5"><p>Howdy, I'm in Section 5.</p></div>
+              <div class="tab-pane active" id="tab1">
+              <table class="table table-striped">
+						<thead>
+							<tr>
+								<th>&nbsp;ID&nbsp;</th>
+								<th>名字</th>
+								<th>分类</th>
+								<th>修改</th>
+								<th>删除</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="item" items="${items}">
+								<tr>
+									<td>${item.id}</td>
+									<td>${item.name}</td>
+									<td>
+										<c:choose>
+											<c:when test="${item.category == null}">
+												无
+	    									</c:when>
+											<c:otherwise>
+												${item.category.name}
+	    									</c:otherwise>
+										</c:choose>
+									</td>
+									<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+									<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+              </div>    
+              <div class="tab-pane" id="tab2">
+              <table class="table table-striped">
+						<thead>
+							<tr>
+								<th>&nbsp;ID&nbsp;</th>
+								<th>名字</th>
+								<th>分类</th>
+								<th>修改</th>
+								<th>删除</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="item" items="${items}">
+								<tr>
+								<c:choose>
+									<c:when test="${item.category.name=='美食'}">
+										<td>${item.id}</td>
+										<td>${item.name}</td>
+										<td>${item.category.name}</td>
+										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
+	    							</c:when>	
+								</c:choose>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+              </div> 
+              <div class="tab-pane" id="tab3">
+            <table class="table table-striped">
+						<thead>
+							<tr>
+								<th>&nbsp;ID&nbsp;</th>
+								<th>名字</th>
+								<th>分类</th>
+								<th>修改</th>
+								<th>删除</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="item" items="${items}">
+								<tr>
+								<c:choose>
+									<c:when test="${item.category.name=='KTV'}">
+										<td>${item.id}</td>
+										<td>${item.name}</td>
+										<td>${item.category.name}</td>
+										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
+	    							</c:when>	
+								</c:choose>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+              </div>
+              <div class="tab-pane" id="tab4">
+             <table class="table table-striped">
+						<thead>
+							<tr>
+								<th>&nbsp;ID&nbsp;</th>
+								<th>名字</th>
+								<th>分类</th>
+								<th>修改</th>
+								<th>删除</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="item" items="${items}">
+								<tr>
+								<c:choose>
+									<c:when test="${item.category.name=='电影'}">
+										<td>${item.id}</td>
+										<td>${item.name}</td>
+										<td>${item.category.name}</td>
+										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
+	    							</c:when>	
+								</c:choose>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+              </div>
+              <div class="tab-pane" id="tab5">
+              <table class="table table-striped">
+						<thead>
+							<tr>
+								<th>&nbsp;ID&nbsp;</th>
+								<th>名字</th>
+								<th>分类</th>
+								<th>修改</th>
+								<th>删除</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="item" items="${items}">
+								<tr>
+								<c:choose>
+									<c:when test="${item.category.name=='hotel'}">
+										<td>${item.id}</td>
+										<td>${item.name}</td>
+										<td>${item.category.name}</td>
+										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
+	    							</c:when>	
+								</c:choose>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+              </div>
             </div>
           </div>
           
