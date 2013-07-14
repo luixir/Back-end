@@ -19,29 +19,29 @@ public class Category {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
-	private String name;//分类名称
+	private String name;//鍒嗙被鍚嶇О
 	
-	private String picture;//分类图片
+	private String picture;//鍒嗙被鍥剧墖
 	
 	@OneToMany(mappedBy = "parent")
-	private List<Category> subCategory;//子分类
+	private List<Category> subCategory;//瀛愬垎绫�
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	private Category parent;// 分类是子分类的父类（例如，food是Chinese Food的父类）
+	private Category parent;// 鍒嗙被鏄瓙鍒嗙被鐨勭埗绫伙紙渚嬪锛宖ood鏄疌hinese Food鐨勭埗绫伙級
 
 	/**
 	 * @return the id
 	 */
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

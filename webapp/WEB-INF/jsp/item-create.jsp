@@ -69,11 +69,14 @@
 
 			<div class="field">
 				<div class="container-fluid">
+				<form class="form-horizontal" method="post" action="${ctx}/items/create">
 					<div class="row-fluid">
 						
-							<div class="detailInformation">
+							
 
-								<form class="form-horizontal" method="post" action="${ctx}/items/create">
+								
+								
+								<div class="left">
 									<div class="control-group">
 										<label class="control-label" for="inputName">团购名称：</label>
 										<div class="controls">
@@ -86,7 +89,7 @@
 										<label class="control-label" for="inputShortDescription">简介：</label>
 										<div class="controls">
 											<input type="text" id="inputShortDescription"
-												placeholder="Short description" name="shortDsescription">
+												placeholder="Short description" name="short_dsescription">
 											<abbr title="代金券1张，全场通用，可叠加使用">eg</abbr>
 										</div>
 									</div>
@@ -95,7 +98,7 @@
 										<label class="control-label" for="inputLongDescription">详情：</label>
 										<div class="controls">
 											<input type="text" id="inputLongDescription"
-												placeholder="Long description" name="longDescription">
+												placeholder="Long description" name="long_description">
 											<abbr title="仅售16元，价值20元的巴黎贝甜代金券1张，全场通用。时尚甜点，醉人季节，用美味让时光停驻">eg</abbr>
 										</div>
 									</div>
@@ -104,7 +107,7 @@
 										<label class="control-label" for="inputMainPicture">商品图片：</label>
 										<div class="controls">
 											<input type="text" id="inputMainPicture"
-												placeholder="main picture" name="mainPicture">
+												placeholder="main picture" name="main_picture">
 											<button type="button" class="btn">浏览</button>
 										</div>
 									</div>
@@ -122,7 +125,7 @@
 										<label class="control-label" for="inputPrice">商品原价：</label>
 										<div class="controls">
 											<input type="text" id="inputPrice" placeholder="price"
-												name="actualPrice"> <abbr title="20">eg</abbr>
+												name="actual_price"> <abbr title="20">eg</abbr>
 										</div>
 									</div>
 
@@ -130,7 +133,7 @@
 										<label class="control-label" for="inputDiscountedPrice">折扣价：</label>
 										<div class="controls">
 											<input type="text" id="inputDiscountedPrice"
-												placeholder="Discounted price" name="discountPrice">
+												placeholder="Discounted price" name="discount_price">
 											<abbr title="16">eg</abbr>
 										</div>
 									</div>
@@ -144,7 +147,7 @@
 									</div>
 
 									<div class="control-group">
-										<label class="control-label" for="inputStartTime">开始时间：</label>
+										<label class="control-label" for="inputStartDate">开始时间：</label>
 										<div class="input-append date datepicker"
 											data-date="12-02-2012" data-date-format="dd-mm-yyyy"
 											style="margin-left: 16px;">
@@ -178,30 +181,33 @@
 									<div class="control-group">
 										<label class="control-label" for="inputContent">分类：</label>
 												<c:forEach var="listcategory" items="${listcategory}" varStatus="theCount">
-                                                <label class="radio"> 
-                                                <input type="radio" name="optionsRadios" id="optionsRadios${theCount.count}" value="${listcategory.name}">
+                                                <label class="radio inline"> 
+                                                <input type="radio" name="category.id" id="optionsRadios${theCount.count}" value="${listcategory.id}">
                                                 ${listcategory.name}
                                                 </label>
                                                 </c:forEach>
 										</div>
-									</div>
+									
 
 									<div class="control-group">
 										<label class="control-label" for="inputFeature">其他特点：</label>
 										<div class="controls">
+										
+										   <c:forEach var="listfeature" items="${listfeature}" varStatus="theCount">
+                                                <label class="checkbox inline"> 
+                                                <input type="checkbox"  id="inlineCheckbox${theCount.count}" value="${listfeature.name}">
+                                                ${listfeature.name}
+                                                </label>
+                                           </c:forEach>
 
-											<label class="checkbox inline"> <input
-												type="checkbox" id="inlineCheckbox1" value="option1">免预约
-											</label> <label class="checkbox inline"> <input
-												type="checkbox" id="inlineCheckbox2" value="option2">支持随时退
-											</label> <label class="checkbox inline"> <input
-												type="checkbox" id="inlineCheckbox3" value="option3">支持过期退
-											</label>
 										</div>
 									</div>
+								</div>
+									
+									
 							
 							<!--Sidebar content-->
-
+                               <div class="right">
 									<label><b>地址：</b></label>
 									<div class="control-group">
 										<label class="control-label" for="inputShopName">商家名称：</label>
@@ -215,7 +221,7 @@
 										<label class="control-label" for="inputDetailAddress">详细地址：</label>
 										<div class="controls">
 											<input type="text" id="inputDetailAddress"
-												placeholder="detail address" name="address.addressDetail">
+												placeholder="detail address" name="address.address_detail">
 											<abbr title="朝阳区建国门外大街1号国贸商城B1楼SB124A">eg</abbr>
 										</div>
 									</div>
@@ -232,7 +238,7 @@
 										<label class="control-label" for="inputTranportationMethod">交通方式：</label>
 										<div class="controls">
 											<input type="text" id="inputTranportationMethod"
-												placeholder="tranportation method" name="nethodToThere">
+												placeholder="tranportation method" name="nethod_to_there">
 											<abbr title="地铁大望路站">eg</abbr>
 										</div>
 									</div>
@@ -242,7 +248,7 @@
 										<label class="control-label" for="inputItemDetailName">内容：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailName"
-												placeholder="item detail name"> <abbr title="代金券">eg</abbr>
+												placeholder="item detail name" name="item_content"> <abbr title="代金券">eg</abbr>
 										</div>
 									</div>
 
@@ -250,7 +256,7 @@
 										<label class="control-label" for="inputItemDetailPrice">单价：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailPrice"
-												placeholder="price"> <abbr title="20">eg</abbr>
+												placeholder="price" name="price"> <abbr title="20">eg</abbr>
 										</div>
 									</div>
 
@@ -258,7 +264,7 @@
 										<label class="control-label" for="inputItemDetailNumber">数量：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailNumber"
-												placeholder="number"> <abbr title="1">eg</abbr>
+												placeholder="number" name="number"> <abbr title="1">eg</abbr>
 										</div>
 									</div>
 
@@ -266,16 +272,18 @@
 										<label class="control-label" for="inputItemDetailTotal">小计：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailTotal"
-												placeholder="total"> <abbr title="20">eg</abbr>
+												placeholder="total" name="original_total_price"> <abbr title="20">eg</abbr>
 										</div>
 									</div>
 
 									<p>
-										<button class="btn " type="submit" style="color: black">
+										<button class="btn " type="submit" style="color: black margin-left:50px">
 											<b>继续添加</b>
 										</button>
 									</p>
 									
+									
+									</div>
 									<div class="confrimBtn">
 										<p>
 											<button class="btn " type="submit" style="color: black">
@@ -283,7 +291,11 @@
 											</button>
 										</p>
 									</div>
-								</form>
+									</div>
+									
+								
+							
+							</form>
 							</div>
 							<!--Body content-->
 						</div>
@@ -293,8 +305,7 @@
 
 
 			</div>
-		</div>
-	</div>
+		
 
 	<footer></footer>
 	<script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>

@@ -26,6 +26,10 @@ public class CategoryServiceImpl implements CategoryService {
 	public void addCategory(Category category) {
 		genericDaoSupport.save(category);
 	}
+	
+	public Category loadCategory(Long id) {
+		return genericDaoSupport.load(Category.class, id);
+	}
 
 	public Category getCategoryByName(String name) {
 		String query = "From Category category WHERE category.name=:myName";

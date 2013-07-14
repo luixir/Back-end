@@ -210,7 +210,7 @@
 							<c:forEach var="item" items="${items}">
 								<tr>
 								<c:choose>
-									<c:when test="${item.category.name=='hotel'}">
+									<c:when test="${item.category.name=='酒店'}">
 										<td>${item.id}</td>
 										<td>${item.name}</td>
 										<td>${item.category.name}</td>

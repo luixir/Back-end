@@ -7,6 +7,8 @@
 .DS_Store
 .classpath
 .project
+.jpg
+.png
 # Contain password
 src/main/resources/jdbc.properties
 target/

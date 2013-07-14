@@ -12,6 +12,8 @@ public interface CategoryService {
 	
 	public Category getCategoryByName(String name);
 	
+	public Category loadCategory(Long id);
+	
 	public List<Category> listParentCategories();
 	
 	public void deleteCategory(Category category);

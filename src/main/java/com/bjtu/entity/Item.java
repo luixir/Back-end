@@ -23,46 +23,46 @@ public class Item {
 
 	@Id
 	@GeneratedValue
-	private long id;//商品id
+	private Long id;//鍟嗗搧id
 	
-	private String name;//商品名称
+	private String name;//鍟嗗搧鍚嶇О
 	
-	private String mainPicture;//商品图片（首页上和详细信息最顶端大图）
+	private String mainPicture;//鍟嗗搧鍥剧墖锛堥椤典笂鍜岃缁嗕俊鎭渶椤剁澶у浘锛�
 	
-	private String area;//商品区域（商家所在区域，西直门等）
+	private String area;//鍟嗗搧鍖哄煙锛堝晢瀹舵墍鍦ㄥ尯鍩燂紝瑗跨洿闂ㄧ瓑锛�
 	
-	private String shortDescription;//首页商品短的简介
+	private String shortDescription;//棣栭〉鍟嗗搧鐭殑绠�粙
 	
-	private String longDescription;//商品详情里商品长的简介
+	private String longDescription;//鍟嗗搧璇︽儏閲屽晢鍝侀暱鐨勭畝浠�
 	
-	private BigDecimal actualPrice;//商品原价
+	private BigDecimal actualPrice;//鍟嗗搧鍘熶环
 	
-	private BigDecimal discountPrice;//商品折扣价
+	private BigDecimal discountPrice;//鍟嗗搧鎶樻墸浠�
 	
-	private BigDecimal discount;//折扣
+	private BigDecimal discount;//鎶樻墸
 	
-	private int consumedNumber;//消费人数
+	private int consumedNumber;//娑堣垂浜烘暟
 	
-	private Date startDate;//该团购开始时间
+	private Date startDate;//璇ュ洟璐紑濮嬫椂闂�
 	
-	private Date endDate;//该团购结束时间
+	private Date endDate;//璇ュ洟璐粨鏉熸椂闂�
 	
-	private Date createDate;//团购创建时间
+	private Date createDate;//鍥㈣喘鍒涘缓鏃堕棿
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private Address address;//商品所属商家的地址
+	private Address address;//鍟嗗搧鎵�睘鍟嗗鐨勫湴鍧�
 	
 	@ManyToOne
-	private Category category;//商品分类
+	private Category category;//鍟嗗搧鍒嗙被
 	
 	@OneToMany(mappedBy = "item")
-	private List<ItemDetail> itemDetails;//本单详情
+	private List<ItemDetail> itemDetails;//鏈崟璇︽儏
 	
 	@OneToMany(targetEntity = Feature.class)
 	@JoinTable(name = "item_feature", joinColumns = @JoinColumn(name = "item_id"), inverseJoinColumns = @JoinColumn(name = "feature_id"))
-	private List<Feature> features;//商品特点（免预约等）
+	private List<Feature> features;//鍟嗗搧鐗圭偣锛堝厤棰勭害绛夛級
 	
-	private String content;//商家简介，所有介绍一张图片，存储图片地址
+	private String content;//鍟嗗绠�粙锛屾墍鏈変粙缁嶄竴寮犲浘鐗囷紝瀛樺偍鍥剧墖鍦板潃
 
 	/**
 	 * @return the id
