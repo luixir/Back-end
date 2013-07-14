@@ -158,5 +158,25 @@ padding-left: 100px;
 
 .confrimBtn {
   margin-left: 480px;
-  margin-top: 50px;
+  margin-bottom: 200px;
+  float:left;
+}
+
+.left {
+	width:50%;
+	margin-left:10px;
+	float:left;
+	position:relative;
+	clear: both;
+}
+
+.right {
+	width:45%;
+	margin-right:10px;
+	float:right;
+	position:relative;
+}
+
+¡£right .p  {
+	margin-right:50px;
 }

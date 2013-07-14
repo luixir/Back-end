@@ -3,6 +3,7 @@ package com.bjtu.service;
 import java.util.List;
 
 import com.bjtu.entity.Category;
+import com.bjtu.entity.Feature;
 import com.bjtu.entity.Item;
 
 /**

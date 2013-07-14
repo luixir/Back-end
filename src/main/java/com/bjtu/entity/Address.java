@@ -13,15 +13,15 @@ public class Address {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
-	private String name;//商家名称
+	private String name;//鍟嗗鍚嶇О
 	
-	private String addressDetail;// 商家详细地址
+	private String addressDetail;// 鍟嗗璇︾粏鍦板潃
 	
-	private String phone;// 商家联系电话（预约或者咨询等）
+	private String phone;// 鍟嗗鑱旂郴鐢佃瘽锛堥绾︽垨鑰呭挩璇㈢瓑锛�
 	
-	private String methodToThere;// 交通方式,地铁，公交等	
+	private String methodToThere;// 浜ら�鏂瑰紡,鍦伴搧锛屽叕浜ょ瓑	
 
 	/**
 	 * @return the id
