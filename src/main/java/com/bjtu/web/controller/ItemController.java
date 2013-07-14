@@ -19,8 +19,8 @@ import com.bjtu.service.ItemService;
 public class ItemController {
 	
 	@Autowired
-	
 	private ItemService itemService;
+	@Autowired
 	private CategoryService categoryService;
 	
 	/**
@@ -36,7 +36,6 @@ public class ItemController {
 		
 		return modelAndView;
 	}
-
 	
 	/**
 	 * prepare to create an item
@@ -44,11 +43,10 @@ public class ItemController {
 	 */
 	@RequestMapping("/create") // action
 	public ModelAndView create() {
-//		List<Category> listcategory = categoryService.listParentCategories();
-		List<Item> listitem = itemService.listEndingItems();
+		List<Category> listcategory = categoryService.listParentCategories();
 				
 		ModelAndView modelAndView = new ModelAndView("item-create");
-		modelAndView.addObject("listcategory", listitem);
+		modelAndView.addObject("listcategory", listcategory);
 		
 		return modelAndView;
 	}
