@@ -54,8 +54,7 @@ public class CategoryController {
 	 */
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ModelAndView onCreate(Category category) {
-		
-		if(category.getParent().getId()!=null){
+		if(category.getParent().getId() != null){
 			Category rootCategory = categoryService.loadCategory(category.getParent().getId());
 			category.setParent(rootCategory);
 		}
