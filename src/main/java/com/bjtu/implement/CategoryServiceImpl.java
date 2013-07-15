@@ -51,7 +51,10 @@ public class CategoryServiceImpl implements CategoryService {
 
 	public void deleteCategory(Category category) {
 		genericDaoSupport.delete(category);
-		
+	}
+
+	public void saveOrUpdateCategory(Category category) {	
+		genericDaoSupport.saveOrUpdate(category);
 	}
 	
 }

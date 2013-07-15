@@ -16,7 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.bjtu.entity.Category;
 import com.bjtu.entity.Item;
+import com.bjtu.service.CategoryService;
 
 /**
  * @author Downpour
@@ -29,7 +31,22 @@ public class ItemTestCase {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+	@Autowired
+	private CategoryService categoryService;
+	
 	@Test
+	public void testUpdatesItem(){
+		Session session = sessionFactory.openSession();
+//		Category category = categoryService.loadCategory(new Long(26));
+		Category category = (Category) session.load(Category.class, 26);
+		category.setName("abc");
+		
+		session.saveOrUpdate(category);
+	}
+	
+	
+	
+//	@Test
 	public void testSaveItem() {
 		Session session = sessionFactory.openSession();
 		
@@ -41,7 +58,7 @@ public class ItemTestCase {
 		
 	}
 	
-	@Test
+//	@Test
 	public void testGetItemByPrimaryKey() {
 		Session session = sessionFactory.openSession();
 		
@@ -50,7 +67,7 @@ public class ItemTestCase {
 		Assert.assertEquals("18616858307", item.getContent());
 	}
 	
-	@Test
+//	@Test
 	public void testUpdateItem() {
 		Session session = sessionFactory.openSession();
 		
@@ -62,7 +79,7 @@ public class ItemTestCase {
 		Assert.assertEquals("13816082224", item.getContent());
 	}
 
-	@Test
+//	@Test
 	@SuppressWarnings("unchecked")
 	public void testHQL() {
 		Session session = sessionFactory.openSession();

@@ -34,8 +34,10 @@ public class ItemController {
 	@RequestMapping("") //action
 	public ModelAndView list() {
 		List<Item> items = itemService.listAllItem();
+		List<Category> category = categoryService.listAllCategories();
 		ModelAndView modelAndView = new ModelAndView("item-list");
 		modelAndView.addObject("items", items);
+		modelAndView.addObject("category", category);
 		
 		return modelAndView;
 	}

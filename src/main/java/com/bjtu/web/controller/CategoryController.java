@@ -69,35 +69,36 @@ public class CategoryController {
 	
 	/**
 	 * Prepare to modify a category
+	 * Getting the database
 	 * 
 	 * @return
 	 */
 	@RequestMapping("/modify")
 	public ModelAndView modify(Long id) {
 		Category categories = categoryService.getCategoryById(id);
+		List<Category> rootCategories = categoryService.listParentCategories();
 		ModelAndView modelAndView = new ModelAndView("category-modify");
 		modelAndView.addObject("categories", categories);
+		modelAndView.addObject("rootCategories", rootCategories);
 		
 		return modelAndView;
 	}
 	
 	/**
+	 * Update the corresponding category
 	 * 
 	 * @param category modify
 	 * @return
 	 */
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
 	public ModelAndView onModify(Category category){
-		
-		if(category.getParent().getId()!= null){
-			Category rootCategory = categoryService.getCategoryById(category.getParent().getId());
+		if(category.getParent().getId() != null){
+			Category rootCategory = categoryService.loadCategory(category.getParent().getId());
 			category.setParent(rootCategory);
-			
 		}
+		categoryService.saveOrUpdateCategory(category);
 		
-		categoryService.getCategoryById(null);
-		
-		ModelAndView modelAndView = new ModelAndView("redirect:/category-modify");
+		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
 		
 		return modelAndView;
 	}
@@ -112,6 +113,5 @@ public class CategoryController {
 		categoryService.deleteCategory(category);
 		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
 		return modelAndView;
-	}
-	
+	}	
 }
