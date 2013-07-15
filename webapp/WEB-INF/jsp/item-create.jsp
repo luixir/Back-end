@@ -11,7 +11,7 @@
 
 			<div class="field">
 				<div class="container-fluid">
-				<form class="form-horizontal" method="post" action="${ctx}/items/create">
+				<form class="form-horizontal" method="post" action="${ctx}/items/create" enctype="multipart/form-data">
 					<div class="row-fluid">
 								<div class="left">
 									<div class="control-group">
@@ -43,9 +43,9 @@
 									<div class="control-group">
 										<label class="control-label" for="inputMainPicture">商品图片：</label>
 										<div class="controls">
-											<input type="text" id="inputMainPicture"
-												placeholder="main picture" name="mainPicture">
-											<button type="button" class="btn">浏览</button>
+											
+											<input type="file" name="mainPictureFile" style=" width:219px;">
+										
 										</div>
 									</div>
 
@@ -108,8 +108,7 @@
 									<div class="control-group">
 										<label class="control-label" for="inputContent">商品介绍图片：</label>
 										<div class="controls">
-											<input type="text" id="inputContent" placeholder="Content">
-											<button type="button" class="btn">浏览</button>
+											<input type="file" name="contentFile" style=" width:219px;">
 										</div>
 									</div>
 									

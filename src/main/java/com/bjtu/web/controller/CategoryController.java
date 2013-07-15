@@ -1,11 +1,16 @@
 package com.bjtu.web.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bjtu.entity.Category;
@@ -17,6 +22,8 @@ public class CategoryController {
 	
 	@Autowired
 	private CategoryService categoryService;
+	
+	private String Path = "F:\\Documents\\image";
 	
 	/**
 	 * List all the categories
@@ -37,7 +44,7 @@ public class CategoryController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/create")
+	@RequestMapping("/create" )
 	public ModelAndView create() {
 		List<Category> rootCategories = categoryService.listParentCategories();
 		ModelAndView modelAndView = new ModelAndView("category-create");
@@ -53,11 +60,24 @@ public class CategoryController {
 	 * @return
 	 */
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public ModelAndView onCreate(Category category) {
+	public ModelAndView onCreate(Category category, @RequestParam("categoryPictureFile") MultipartFile categoryPicture) {
 		if(category.getParent().getId() != null){
 			Category rootCategory = categoryService.loadCategory(category.getParent().getId());
 			category.setParent(rootCategory);
 		}
+		
+		categoryPicture.getOriginalFilename();
+		category.setPicture(Path + categoryPicture.getOriginalFilename());
+		
+		File file = new File("D:\\images\\" + categoryPicture);
+		
+		try {
+			FileUtils.copyInputStreamToFile(categoryPicture.getInputStream(), file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		
 		categoryService.addCategory(category);
 		
