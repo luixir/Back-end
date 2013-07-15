@@ -66,23 +66,38 @@ public class CategoryController {
 		return modelAndView;
 	}
 	
+	
+	/**
+	 * Prepare to modify a category
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/modify")
+	public ModelAndView modify(Long id) {
+		Category categories = categoryService.getCategoryById(id);
+		ModelAndView modelAndView = new ModelAndView("category-modify");
+		modelAndView.addObject("categories", categories);
+		
+		return modelAndView;
+	}
+	
 	/**
 	 * 
 	 * @param category modify
 	 * @return
 	 */
-	@RequestMapping("/category-modify")
-	public ModelAndView modify(Category category){
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public ModelAndView onModify(Category category){
 		
 		if(category.getParent().getId()!= null){
 			Category rootCategory = categoryService.getCategoryById(category.getParent().getId());
-			category.getClass();
+			category.setParent(rootCategory);
 			
 		}
 		
 		categoryService.getCategoryById(null);
 		
-		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
+		ModelAndView modelAndView = new ModelAndView("redirect:/category-modify");
 		
 		return modelAndView;
 	}

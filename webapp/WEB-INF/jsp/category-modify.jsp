@@ -56,7 +56,6 @@
             </div>
           </div> 
 
-
       </div>
   		<div class="mainfield">
         
@@ -70,11 +69,11 @@
       <form class="forma">  
         <fieldset >
             <label>分类名称:</label>    
-            <input type="text" placeholder="category name">    
+            <input type="text" placeholder="category name" value="${categories.name}">
             <span class="help-block">Example 中餐</span>   
 
             <label>分类图片:</label>    
-            <input type="text" placeholder="category picture">    
+            <input type="text" placeholder="category picture" value="${categories.picture}">    
             <button type="button" class="btn">浏览</button>
             <br></br> 
 
