@@ -66,7 +66,6 @@ public class CategoryController {
 		return modelAndView;
 	}
 	
-	
 	/**
 	 * Prepare to modify a category
 	 * Getting the database

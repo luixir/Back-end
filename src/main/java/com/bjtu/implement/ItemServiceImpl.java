@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bjtu.dao.GenericDaoSupport;
+import com.bjtu.entity.Category;
 import com.bjtu.entity.Item;
 import com.bjtu.service.ItemService;
 
@@ -47,5 +48,13 @@ public class ItemServiceImpl implements ItemService{
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("name", name);
 		return genericDaoSupport.searchForList(querySentence, parameters);
+	}
+
+	public void updateOrDeleteItem(Item item) {
+		genericDaoSupport.saveOrUpdate(item);
+	}
+
+	public Item getItemById(Long id) {
+		return genericDaoSupport.get(Item.class, id);
 	}
 }

@@ -26,6 +26,7 @@ public class ItemController {
 	private CategoryService categoryService;
 	@Autowired
 	private FeatureService featureService;
+	
 	/**
 	 * List all the items
 	 * 
@@ -42,7 +43,6 @@ public class ItemController {
 		return modelAndView;
 	}
 	
-	
 	/**
 	 * prepare to create an item
 	 * @return
@@ -58,7 +58,6 @@ public class ItemController {
 		
 		return modelAndView;
 	}
-	
 	
 	/**
 	 * Create an item
@@ -83,6 +82,30 @@ public class ItemController {
 	public ModelAndView onDelete(Item item){
 		itemService.deleteItem(item);
 		ModelAndView modelAndView = new ModelAndView("redirect:/items");
+		return modelAndView;
+	}
+	
+	/**
+	 * Prepare to modify an item
+	 * @return
+	 */
+	@RequestMapping("/modify")
+	public ModelAndView modify(Long id){
+		Item item = itemService.getItemById(id);
+		ModelAndView modelAndView = new ModelAndView("item-modify");
+		modelAndView.addObject("item", item);
+		return modelAndView;
+	}
+	
+	/**
+	 * Update the corresponding item
+	 * @return
+	 */
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public ModelAndView onModify(){
+		
+		
+		ModelAndView modelAndView = new ModelAndView("category-modify");
 		return modelAndView;
 	}
 
