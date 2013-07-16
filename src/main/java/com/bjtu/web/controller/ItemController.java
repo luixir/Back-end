@@ -1,20 +1,24 @@
 package com.bjtu.web.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
-
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bjtu.entity.Category;
 import com.bjtu.entity.Feature;
 import com.bjtu.entity.Item;
 import com.bjtu.service.CategoryService;
-import com.bjtu.service.ItemService;
 import com.bjtu.service.FeatureService;
+import com.bjtu.service.ItemService;
 
 @Controller
 @RequestMapping("/items") //namespace
@@ -27,6 +31,7 @@ public class ItemController {
 	@Autowired
 	private FeatureService featureService;
 	
+	private String Path = "F:\\Documents\\image";
 	/**
 	 * List all the items
 	 * 
@@ -65,8 +70,33 @@ public class ItemController {
 	 * @return
 	 */
 	@RequestMapping( value = "/create", method = RequestMethod.POST)
-	public ModelAndView onCreate(Item item) {
+	public ModelAndView onCreate(Item item, @RequestParam("mainPictureFile") MultipartFile mainPicture, @RequestParam("contentFile") MultipartFile content) {
+		mainPicture.getOriginalFilename();
+		item.setMainPicture(Path + mainPicture.getOriginalFilename());
+		
+		File file = new File("D:\\images\\" + mainPicture);
+		
+		try {
+			FileUtils.copyInputStreamToFile(mainPicture.getInputStream(), file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		content.getOriginalFilename();
+		item.setContent(Path + content.getOriginalFilename());
+		
+		File contentfile = new File("D:\\images\\" + content);
+		
+		try {
+			FileUtils.copyInputStreamToFile(content.getInputStream(), contentfile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		itemService.addItem(item);
+		
 		
 		ModelAndView modelAndView = new ModelAndView("redirect:/items");
 		
