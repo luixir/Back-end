@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="header.jsp" %>
@@ -168,14 +169,8 @@
               </div>
             </div>
           </div>
-          
-
-
-
         </div>
-
   		</div>
-  	</div>
 
     <footer></footer>
     <script type="text/javascript" src="${ctx}/static/js/jquery.js"></script>
@@ -192,8 +187,5 @@
   $(this).tab('show');
 })
     </script>
-
-
   </body>
-
 </html>
