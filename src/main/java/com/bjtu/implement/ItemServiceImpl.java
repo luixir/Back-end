@@ -50,7 +50,7 @@ public class ItemServiceImpl implements ItemService{
 		return genericDaoSupport.searchForList(querySentence, parameters);
 	}
 
-	public void updateOrDeleteItem(Item item) {
+	public void saveOrUpdateItem(Item item) {
 		genericDaoSupport.saveOrUpdate(item);
 	}
 

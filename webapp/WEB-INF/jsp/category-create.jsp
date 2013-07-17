@@ -2,15 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
 		<div class="mainfield">
-
 			<ul class="breadcrumbb">
 				<li><a href="HomePage.html">首页</a> <span class="divider">/</span></li>
 				<li><a href="${ctx}/categories">分类管理</a> <span
 					class="divider">/</span></li>
 				<li class="active"><a href="${ctx}/categories/create">新增分类</a></li>
 			</ul>
-			<div class="field">
-
+			<div class="container-fluid">
+			<h3>新分类</h3>
 				<form class="forma" method="post" action="${ctx}/categories/create" enctype="multipart/form-data">
 					<fieldset>
 						<label>分类名称:</label> <input type="text"

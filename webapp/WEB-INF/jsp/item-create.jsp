@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>
-		<div class="mainfield" style="height: 2000px">
+		<div class="mainfield">
 
 			<ul class="breadcrumbb">
 				<li><a href="HomePage.html">首页</a> <span class="divider">/</span></li>
@@ -11,14 +11,15 @@
 
 			<div class="field">
 				<div class="container-fluid">
-				<form class="form-horizontal" method="post" action="${ctx}/items/create" enctype="multipart/form-data">
+				<h3>新增团购</h3>
+				<form class="forma" method="post" action="${ctx}/items/create" enctype="multipart/form-data">
 					<div class="row-fluid">
 								<div class="left">
 									<div class="control-group">
 										<label class="control-label" for="inputName">团购名称：</label>
 										<div class="controls">
 											<input type="text" id="inputName" placeholder="Name"
-												name="name"> <abbr title="巴黎贝甜">eg</abbr>
+												name="name"> <abbr title="巴黎贝甜"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -27,7 +28,7 @@
 										<div class="controls">
 											<input type="text" id="inputShortDescription"
 												placeholder="Short description" name="shortDescription">
-											<abbr title="代金券1张，全场通用，可叠加使用">eg</abbr>
+											<abbr title="代金券1张，全场通用，可叠加使用"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -36,7 +37,7 @@
 										<div class="controls">
 											<input type="text" id="inputLongDescription"
 												placeholder="Long description" name="longDescription">
-											<abbr title="仅售16元，价值20元的巴黎贝甜代金券1张，全场通用。时尚甜点，醉人季节，用美味让时光停驻">eg</abbr>
+											<abbr title="仅售16元，价值20元的巴黎贝甜代金券1张，全场通用。时尚甜点，醉人季节，用美味让时光停驻"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -62,7 +63,7 @@
 										<label class="control-label" for="inputPrice">商品原价：</label>
 										<div class="controls">
 											<input type="text" id="inputPrice" placeholder="price"
-												name="actualPrice"> <abbr title="20">eg</abbr>
+												name="actualPrice"> <abbr title="20"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -71,7 +72,7 @@
 										<div class="controls">
 											<input type="text" id="inputDiscountedPrice"
 												placeholder="Discounted price" name="discountPrice">
-											<abbr title="16">eg</abbr>
+											<abbr title="16"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -79,7 +80,7 @@
 										<label class="control-label" for="inputDiscount">折扣：</label>
 										<div class="controls">
 											<input type="text" id="inputDiscount" placeholder="Discount"
-												name="discount"> <abbr title="8">eg</abbr>
+												name="discount"> <abbr title="8"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -113,9 +114,9 @@
 									</div>
 									
 									<div class="control-group">
-										<label class="control-label" for="inputContent">Consumed number</label>
+										<label class="control-label" for="consumedNumber">Consumed number</label>
 										<div class="controls">
-											<input type="text" id="inputContent" placeholder="Content" name="consumedNumber">
+											<input type="text" id="consumedNumber" placeholder="Content" name="consumedNumber">
 										</div>
 									</div>
 
@@ -149,7 +150,7 @@
 										<label class="control-label" for="inputShopName">商家名称：</label>
 										<div class="controls">
 											<input type="text" id="inputShopName" placeholder="Shop name"
-												name="address.name"> <abbr title="巴黎贝甜（国贸店）">eg</abbr>
+												name="address.name"> <abbr title="巴黎贝甜（国贸店）"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -158,7 +159,7 @@
 										<div class="controls">
 											<input type="text" id="inputDetailAddress"
 												placeholder="detail address" name="address.addressDetail">
-											<abbr title="朝阳区建国门外大街1号国贸商城B1楼SB124A">eg</abbr>
+											<abbr title="朝阳区建国门外大街1号国贸商城B1楼SB124A"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -166,7 +167,7 @@
 										<label class="control-label" for="inputPhone">联系方式：</label>
 										<div class="controls">
 											<input type="text" id="inputPhone" placeholder="phone"
-												name="address.phone"> <abbr title="010-51303960">eg</abbr>
+												name="address.phone"> <abbr title="010-51303960"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -175,7 +176,7 @@
 										<div class="controls">
 											<input type="text" id="inputTranportationMethod"
 												placeholder="tranportation method" name="address.methodToThere">
-											<abbr title="地铁大望路站">eg</abbr>
+											<abbr title="地铁大望路站"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -184,7 +185,7 @@
 										<label class="control-label" for="inputItemDetailName">内容：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailName"
-												placeholder="item detail name" name="itemContent"> <abbr title="代金券">eg</abbr>
+												placeholder="item detail name" name="itemContent"> <abbr title="代金券"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -192,7 +193,7 @@
 										<label class="control-label" for="inputItemDetailPrice">单价：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailPrice"
-												placeholder="price" name="price"> <abbr title="20">eg</abbr>
+												placeholder="price" name="price"> <abbr title="20"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -200,7 +201,7 @@
 										<label class="control-label" for="inputItemDetailNumber">数量：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailNumber"
-												placeholder="number" name="number"> <abbr title="1">eg</abbr>
+												placeholder="number" name="number"> <abbr title="1"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -208,7 +209,7 @@
 										<label class="control-label" for="inputItemDetailTotal">小计：</label>
 										<div class="controls">
 											<input type="text" id="inputItemDetailTotal"
-												placeholder="total" name="originalTotalPrice"> <abbr title="20">eg</abbr>
+												placeholder="total" name="originalTotalPrice"> <abbr title="20"><span class="label label-info">Info</span></abbr>
 										</div>
 									</div>
 
@@ -217,7 +218,6 @@
 											<b>继续添加</b>
 										</button>
 									</p>
-									
 									
 									</div>
 									<div class="confrimBtn">
@@ -228,19 +228,11 @@
 										</p>
 									</div>
 									</div>
-									
-								
-							
 							</form>
 							</div>
 							<!--Body content-->
 						</div>
-					
 				</div>
-
-
-
-			</div>
 		
 
 	<footer></footer>

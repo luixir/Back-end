@@ -3,14 +3,15 @@
 <%@ include file="header.jsp" %>
   		<div class="mainfield">
         
-  			<ul class="breadcrumbb">
+  		<ul class="breadcrumbb">
           <li><a href="HomePage.html">首页</a> <span class="divider">/</span></li>
           <li><a href="ItemModify.html">团购管理</a> <span class="divider">/</span></li>
           <li class="active">全部团购</li>
         </ul>
-  			<div class="field">
-          
-          
+  		<div class="container-fluid">
+        <h3>全部团购</h3>
+        <a href="${ctx}/items/create" class="btn btn-primary">新增团购</a>
+        <br></br>
           <div class="tabbable" >
             <ul class="nav nav-tabs">    
               <li class="active"><a href="#tab1" data-toggle="tab">全部</a></li>    
@@ -19,7 +20,7 @@
               <li><a href="#tab4" data-toggle="tab">电影</a></li>
               <li><a href="#tab5" data-toggle="tab">酒店</a></li>
             </ul>  
-            <div class="tab-content">    
+            <div class="tab-content">
               <div class="tab-pane active" id="tab1">
               <table class="table table-striped">
 						<thead>
@@ -46,7 +47,7 @@
 	    									</c:otherwise>
 										</c:choose>
 									</td>
-									<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+									<td><a href="${ctx}/items/modify?id=${item.id}" onclick="return confirm('Are you sure?')">修改</a></td>
 									<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
 								</tr>
 							</c:forEach>
@@ -72,7 +73,7 @@
 										<td>${item.id}</td>
 										<td>${item.name}</td>
 										<td>${item.category.name}</td>
-										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/modify?id=${item.id}" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
 	    							</c:when>	
 								</c:choose>
@@ -100,7 +101,7 @@
 										<td>${item.id}</td>
 										<td>${item.name}</td>
 										<td>${item.category.name}</td>
-										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/modify?id=${item.id}" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
 	    							</c:when>	
 								</c:choose>
@@ -128,7 +129,7 @@
 										<td>${item.id}</td>
 										<td>${item.name}</td>
 										<td>${item.category.name}</td>
-										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/modify?id=${item.id}" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
 	    							</c:when>	
 								</c:choose>
@@ -156,7 +157,7 @@
 										<td>${item.id}</td>
 										<td>${item.name}</td>
 										<td>${item.category.name}</td>
-										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
+										<td><a href="${ctx}/items/modify?id=${item.id}" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
 	    							</c:when>	
 								</c:choose>

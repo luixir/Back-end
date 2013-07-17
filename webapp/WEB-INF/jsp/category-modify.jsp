@@ -8,8 +8,8 @@
 				<li><a href="${ctx}/categories">分类管理</a> <span class="divider">/</span></li>
 				<li class="active">新增分类</li>
 			</ul>
-			<div class="field">
-
+			<div class="container-fluid">
+			<h3>修改分类</h3>
 				<form class="forma" method="post" action="${ctx}/categories/modify">
 					<fieldset>
 						<label>ID:</label>

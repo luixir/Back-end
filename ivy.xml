@@ -69,6 +69,8 @@
 		
 		<dependency org="mysql" name="mysql-connector-java" rev="5.1.9" conf="compile->default,sources"/>
 		<dependency org="c3p0" name="c3p0" rev="0.9.1.2" conf="compile->default,sources"/>
+		
+		<dependency org="joda-time" name="joda-time" rev="2.1" conf="compile->default,sources" />
 		        
 		<!-- dependency with test scope -->
 		<dependency org="junit" name="junit" rev="4.8.1" conf="test->default"/>

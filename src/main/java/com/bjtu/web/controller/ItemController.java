@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bjtu.entity.Address;
 import com.bjtu.entity.Category;
 import com.bjtu.entity.Feature;
 import com.bjtu.entity.Item;
+import com.bjtu.service.AddressService;
 import com.bjtu.service.CategoryService;
 import com.bjtu.service.FeatureService;
 import com.bjtu.service.ItemService;
@@ -30,6 +32,8 @@ public class ItemController {
 	private CategoryService categoryService;
 	@Autowired
 	private FeatureService featureService;
+	@Autowired
+	private AddressService addressService;
 	
 	private String Path = "F:\\Documents\\image";
 	/**
@@ -122,8 +126,16 @@ public class ItemController {
 	@RequestMapping("/modify")
 	public ModelAndView modify(Long id){
 		Item item = itemService.getItemById(id);
+		List<Category> listcategory = categoryService.listAllCategories();
+		List<Feature> listfeature = featureService.listAllFeatures();
+		List<Address> listaddress = addressService.listAllAddress();
+		
 		ModelAndView modelAndView = new ModelAndView("item-modify");
+		
 		modelAndView.addObject("item", item);
+		modelAndView.addObject("listcategory", listcategory);
+		modelAndView.addObject("listfeature", listfeature);
+		modelAndView.addObject("listaddress", listaddress);
 		return modelAndView;
 	}
 	
@@ -132,10 +144,10 @@ public class ItemController {
 	 * @return
 	 */
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public ModelAndView onModify(){
+	public ModelAndView onModify(Item item){
+		itemService.saveOrUpdateItem(item);
 		
-		
-		ModelAndView modelAndView = new ModelAndView("category-modify");
+		ModelAndView modelAndView = new ModelAndView("redirect:/items");
 		return modelAndView;
 	}
 

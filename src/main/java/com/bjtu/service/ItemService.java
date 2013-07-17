@@ -22,7 +22,7 @@ public interface ItemService {
 	
 	public List<Item> getItemByCategory(String name);
 	
-	public void updateOrDeleteItem(Item item);
+	public void saveOrUpdateItem(Item item);
 	
 	public Item getItemById(Long id);
 	

@@ -8,8 +8,11 @@
 					class="divider">/</span></li>
 				<li class="active">全部分类</li>
 			</ul>
-			<div class="field">
-				<div class="tablefield">
+			<div class="container-fluid">
+			<h3>全部分类</h3>
+			<a href="${ctx}/categories/create" class="btn btn-primary">新增分类</a>
+			<br></br>			
+				<div class="">
 					<table class="table table-striped">
 						<thead>
 							<tr>
