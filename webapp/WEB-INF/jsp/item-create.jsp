@@ -250,6 +250,7 @@
 			autoclose : true,
 			todayBtn : true
 		});
+		$('#datetimepicker').datetimepicker('setStartDate', '17-06-2013');
 	</script>
 
 

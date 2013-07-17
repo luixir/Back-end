@@ -17,9 +17,15 @@
 </head>
 <body>
 	<div class="navbarTop">
+		<div class="quitSystem">
 		<p class="quit">
 			<button class="btn btn-link" type="button" style="color: white">退出</button>
 		</p>
+	    </div>
+	    <div class="logo">
+        <h2>品优记</h2>
+        <p>优惠 团购 品味</p>
+        </div>
 	</div>
 	<div class="container" style="width: 1000px">
 		<div class="menu">
