@@ -41,7 +41,7 @@
 									<td>${item.id}</td>
 									<td>${item.name}</td>
 									<td>${item.consumedNumber}</td>
-									<td>${item.discountPrice}</td>
+									<td>¥${item.discountPrice}</td>
 									<td><c:choose>
 											<c:when test="${item.category == null}">
 												无
@@ -80,7 +80,7 @@
 											<td>${item.id}</td>
 											<td>${item.name}</td>
 											<td>${item.consumedNumber}</td>
-											<td>${item.discountPrice}</td>
+											<td>¥${item.discountPrice}</td>
 											<td>${item.category.name}</td>
 											<td><a href="${ctx}/items/modify?id=${item.id}"
 												onclick="return confirm('Are you sure?')">修改</a></td>
@@ -114,7 +114,7 @@
 											<td>${item.id}</td>
 											<td>${item.name}</td>
 											<td>${item.consumedNumber}</td>
-											<td>${item.discountPrice}</td>
+											<td>¥${item.discountPrice}</td>
 											<td>${item.category.name}</td>
 											<td><a href="${ctx}/items/modify?id=${item.id}"
 												onclick="return confirm('Are you sure?')">修改</a></td>
@@ -148,7 +148,7 @@
 											<td>${item.id}</td>
 											<td>${item.name}</td>
 											<td>${item.consumedNumber}</td>
-											<td>${item.discountPrice}</td>
+											<td>¥${item.discountPrice}</td>
 											<td>${item.category.name}</td>
 											<td><a href="${ctx}/items/modify?id=${item.id}"
 												onclick="return confirm('Are you sure?')">修改</a></td>
@@ -182,7 +182,7 @@
 											<td>${item.id}</td>
 											<td>${item.name}</td>
 											<td>${item.consumedNumber}</td>
-											<td>${item.discountPrice}</td>
+											<td>¥${item.discountPrice}</td>
 											<td>${item.category.name}</td>
 											<td><a href="${ctx}/items/modify?id=${item.id}"
 												onclick="return confirm('Are you sure?')">修改</a></td>
