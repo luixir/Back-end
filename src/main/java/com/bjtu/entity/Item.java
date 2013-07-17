@@ -84,6 +84,7 @@ public class Item {
 	public String getName() {
 		return name;
 	}
+	
 
 	/**
 	 * @param name the name to set

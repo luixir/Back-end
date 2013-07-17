@@ -26,6 +26,8 @@
 							<tr>
 								<th>&nbsp;ID&nbsp;</th>
 								<th>名字</th>
+								<th>购买人数</th>
+								<th>现价</th>
 								<th>分类</th>
 								<th>修改</th>
 								<th>删除</th>
@@ -36,6 +38,8 @@
 								<tr>
 									<td>${item.id}</td>
 									<td>${item.name}</td>
+									<td>${item.consumedNumber}</td>
+									<td>${item.discountPrice}</td>
 									<td>
 										<c:choose>
 											<c:when test="${item.category == null}">
@@ -59,6 +63,8 @@
 							<tr>
 								<th>&nbsp;ID&nbsp;</th>
 								<th>名字</th>
+								<th>购买人数</th>
+								<th>现价</th>
 								<th>分类</th>
 								<th>修改</th>
 								<th>删除</th>
@@ -71,6 +77,8 @@
 									<c:when test="${item.category.name == '火锅'}">
 										<td>${item.id}</td>
 										<td>${item.name}</td>
+										<td>${item.consumedNumber}</td>
+										<td>${item.discountPrice}</td>
 										<td>${item.category.name}</td>
 										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
@@ -87,6 +95,8 @@
 							<tr>
 								<th>&nbsp;ID&nbsp;</th>
 								<th>名字</th>
+								<th>购买人数</th>
+								<th>现价</th>
 								<th>分类</th>
 								<th>修改</th>
 								<th>删除</th>
@@ -99,6 +109,8 @@
 									<c:when test="${item.category.name=='KTV'}">
 										<td>${item.id}</td>
 										<td>${item.name}</td>
+										<td>${item.consumedNumber}</td>
+										<td>${item.discountPrice}</td>
 										<td>${item.category.name}</td>
 										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
@@ -115,6 +127,8 @@
 							<tr>
 								<th>&nbsp;ID&nbsp;</th>
 								<th>名字</th>
+								<th>购买人数</th>
+								<th>现价</th>	
 								<th>分类</th>
 								<th>修改</th>
 								<th>删除</th>
@@ -127,6 +141,8 @@
 									<c:when test="${item.category.name=='电影'}">
 										<td>${item.id}</td>
 										<td>${item.name}</td>
+										<td>${item.consumedNumber}</td>
+										<td>${item.discountPrice}</td>
 										<td>${item.category.name}</td>
 										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
@@ -143,6 +159,8 @@
 							<tr>
 								<th>&nbsp;ID&nbsp;</th>
 								<th>名字</th>
+								<th>购买人数</th>
+								<th>现价</th>
 								<th>分类</th>
 								<th>修改</th>
 								<th>删除</th>
@@ -155,6 +173,8 @@
 									<c:when test="${item.category.name=='酒店'}">
 										<td>${item.id}</td>
 										<td>${item.name}</td>
+										<td>${item.consumedNumber}</td>
+										<td>${item.discountPrice}</td>
 										<td>${item.category.name}</td>
 										<td><a href="${ctx}/items/delete" onclick="return confirm('Are you sure?')">修改</a></td>
 										<td><a href="${ctx}/items/delete?id=${item.id}" onclick="return confirm('Delete <${item.name}> item?')">删除</a></td>
