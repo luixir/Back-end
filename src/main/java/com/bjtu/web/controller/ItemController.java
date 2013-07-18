@@ -35,7 +35,7 @@ public class ItemController {
 	@Autowired
 	private AddressService addressService;
 	
-	private String Path = "F:\\Documents\\image";
+	private String Path = "F:\\Documents\\images";
 	/**
 	 * List all the items
 	 * 
@@ -76,9 +76,9 @@ public class ItemController {
 	@RequestMapping( value = "/create", method = RequestMethod.POST)
 	public ModelAndView onCreate(Item item, @RequestParam("mainPictureFile") MultipartFile mainPicture, @RequestParam("contentFile") MultipartFile content) {
 		mainPicture.getOriginalFilename();
-		item.setMainPicture(Path + mainPicture.getOriginalFilename());
+		item.setMainPicture("static/img/" + mainPicture.getOriginalFilename());
 		
-		File file = new File("D:\\images\\" + mainPicture);
+		File file = new File(Path + mainPicture.getOriginalFilename());
 		
 		try {
 			FileUtils.copyInputStreamToFile(mainPicture.getInputStream(), file);
@@ -88,9 +88,9 @@ public class ItemController {
 		}
 	
 		content.getOriginalFilename();
-		item.setContent(Path + content.getOriginalFilename());
+		item.setContent("static/img/" + content.getOriginalFilename());
 		
-		File contentfile = new File("D:\\images\\" + content);
+		File contentfile = new File(Path + content.getOriginalFilename());
 		
 		try {
 			FileUtils.copyInputStreamToFile(content.getInputStream(), contentfile);

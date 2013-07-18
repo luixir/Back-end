@@ -23,7 +23,7 @@ public class CategoryController {
 	@Autowired
 	private CategoryService categoryService;
 	
-	private String Path = "F:\\Documents\\image";
+	private String Path = "F:\\Documents\\images\\";
 	
 	/**
 	 * List all the categories
@@ -66,10 +66,10 @@ public class CategoryController {
 			category.setParent(rootCategory);
 		}
 		
-		categoryPicture.getOriginalFilename();
-		category.setPicture(Path + categoryPicture.getOriginalFilename());
+		System.out.println("filename:" + categoryPicture.getOriginalFilename());
+		category.setPicture( "static/img/" + categoryPicture.getOriginalFilename());
 		
-		File file = new File("D:\\images\\" + categoryPicture);
+		File file = new File(Path + categoryPicture.getOriginalFilename());
 		
 		try {
 			FileUtils.copyInputStreamToFile(categoryPicture.getInputStream(), file);

@@ -76,7 +76,7 @@
 							<c:forEach var="item" items="${items}">
 								<tr>
 									<c:choose>
-										<c:when test="${item.category.name == '火锅'}">
+										<c:when test="${item.category.parent.name == '美食'}">
 											<td>${item.id}</td>
 											<td>${item.name}</td>
 											<td>${item.consumedNumber}</td>
