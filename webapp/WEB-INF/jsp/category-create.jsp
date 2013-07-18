@@ -16,8 +16,9 @@
 							placeholder="category name" name="name"> <span
 							class="help-block">Example 中餐</span> <label>分类图片:</label>
 							 <input type="file" name="categoryPictureFile" style=" width:219px;">
-						<br></br> <label>父类别:</label> 
+						<br></br> <label>父类别:</label>
 						<select name= "parent.id">
+						<option value="0">无</option>
 							<c:forEach var="rootcategory" items="${rootCategories}">
 								<option value="${rootcategory.id}">${rootcategory.name}</option>
 							</c:forEach>

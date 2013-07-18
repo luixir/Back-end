@@ -61,6 +61,9 @@ public class CategoryController {
 	 */
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public ModelAndView onCreate(Category category, @RequestParam("categoryPictureFile") MultipartFile categoryPicture) {
+		if(category.getParent().getId() == 0){
+		}
+		
 		if(category.getParent().getId() != null){
 			Category rootCategory = categoryService.loadCategory(category.getParent().getId());
 			category.setParent(rootCategory);
@@ -78,7 +81,6 @@ public class CategoryController {
 			e.printStackTrace();
 		}
 	
-		
 		categoryService.addCategory(category);
 		
 		ModelAndView modelAndView = new ModelAndView("redirect:/categories");
