@@ -39,7 +39,7 @@ body {
 }
 
 .forma {
-  padding-left: 300px;
+  padding-left: 30px;
 }
 
 .field {
@@ -150,10 +150,11 @@ padding-left: 100px;
     margin-top: 30px;
 }
 
-.form .confrimBtn {
-  margin-left: 480px;
+.confrimBtn {
+  margin-left: 400px;
   margin-bottom: 200px;
   float:left;
+  margin-top:100px;
 }
 
 .left {

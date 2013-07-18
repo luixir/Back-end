@@ -13,7 +13,7 @@
 				<div class="container-fluid">
 				<h3>新增团购</h3>
 				<form class="forma" method="post" action="${ctx}/items/create" enctype="multipart/form-data">
-					<div class="row-fluid">
+					<div class="row-fluid" >
 								<div class="left">
 									<div class="control-group">
 										<label class="control-label" for="inputName">团购名称：</label>
@@ -89,8 +89,8 @@
 										<div class="input-append date datepicker"
 											data-date="12-02-2012" data-date-format="dd-mm-yyyy"
 											style="margin-left: 16px;">
-											<input size="16" type="text" value="12-02-2012" readonly>
-											<span class="add-on"><i class="icon-th"></i></span> <input
+											<input size="16" type="text" value="18-07-2013" readonly>
+											<span class="add-on"><i class="icon-calendar"></i></span> <input
 												type="hidden" id="dtp_input1" value="" />
 										</div>
 									</div>
@@ -100,8 +100,8 @@
 										<div class="input-append date datepicker"
 											data-date="12-02-2012" data-date-format="dd-mm-yyyy"
 											style="margin-left: 16px;">
-											<input size="16" type="text" value="12-02-2012" readonly>
-											<span class="add-on"><i class="icon-th"></i></span> <input
+											<input size="16" type="text" value="18-07-2013" readonly>
+											<span class="add-on"><i class="icon-calendar"></i></span> <input
 												type="hidden" id="dtp_input1" value="" />
 										</div>
 									</div>
@@ -248,9 +248,10 @@
 	<script type="text/javascript">
 		$('.datepicker').datepicker({
 			autoclose : true,
+			todayHighlight:true,
 			todayBtn : true
 		});
-		$('#datetimepicker').datetimepicker('setStartDate', '17-06-2013');
+		$('.datepicker').datepicker('setStartDate', '07-07-2013');
 	</script>
 
 
