@@ -46,12 +46,12 @@ public class ItemTestCase {
 	
 	
 	
-//	@Test
+	@Test
 	public void testSaveItem() {
 		Session session = sessionFactory.openSession();
 		
 		Item item = new Item();
-		item.setName("downpour");
+		item.setName("你好");
 		item.setContent("18616858307");
 		
 		session.save(item);

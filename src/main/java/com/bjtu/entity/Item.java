@@ -45,13 +45,13 @@ public class Item {
 	
 	private int consumedNumber;//娑堣垂浜烘暟
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date startDate;//璇ュ洟璐紑濮嬫椂闂�
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date endDate;//璇ュ洟璐粨鏉熸椂闂�
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date createDate;//鍥㈣喘鍒涘缓鏃堕棿
 
 	@OneToOne(cascade = CascadeType.ALL)
