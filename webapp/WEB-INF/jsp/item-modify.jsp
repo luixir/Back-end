@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="header.jsp"%>
 <div class="mainfield">
 
@@ -95,8 +96,8 @@
 							<label class="control-label" for="inputStartDate">开始时间：</label>
 							<div class="input-append date datepicker" data-date="18-07-2013"
 								data-date-format="dd-mm-yyyy" style="margin-left: 16px;">
-								<input size="16" type="text" name="startDate" value="${item.startDate}" readonly>
-
+								<input size="16" type="text" name="startDate" 
+								value="<fmt:formatDate type="date" value="${item.startDate}" />" readonly>
 								<span class="add-on"><i class="icon-calendar"></i></span>
 								<input type="hidden" id="dtp_input1" value="" />
 							</div>
@@ -106,8 +107,8 @@
 							<label class="control-label" for="inputEndTime">结束时间：</label>
 							<div class="input-append date datepicker" data-date="18-07-2013"
 								 data-date-format="dd-mm-yyyy" style="margin-left: 16px;">
-								<input size="16" type="text" name="endDate" value="${item.endDate}" readonly>
-
+								<input size="16" type="text" name="endDate" 
+								value="<fmt:formatDate type="date" value="${item.endDate}" />" readonly>
 								<span class="add-on"><i class="icon-calendar"></i></span>
 								<input type="hidden" id="dtp_input1" value="" />
 							</div>
